@@ -11,15 +11,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build with Buildozer
-        uses: ArtemSBulgakov/buildozer-action@v1
-        id: buildozer
-        with:
-          workdir: .
-          buildozer_version: stable
+      - name: Build with Buildozer (kivy/buildozer docker image)
+        run: |
+          docker run --rm -v "$(pwd)":/home/user/hostcwd kivy/buildozer:latest android debug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: xoss-heart-monitor-apk
-          path: ${{ steps.buildozer.outputs.filename }}
+          path: bin/*.apk
