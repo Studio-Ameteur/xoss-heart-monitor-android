@@ -1,20 +1,14 @@
-[app]
-title = XOSS Heart Monitor
-package.name = xossheartmonitor
-package.domain = org.studioamateur
-source.dir = .
-source.include_exts = py,png,jpg,kv,atlas
-icon.filename = %(source.dir)s/icon.png
-version = 0.1
-requirements = python3,kivy==2.3.0
-orientation = portrait
-fullscreen = 0
-android.permissions = BLUETOOTH,BLUETOOTH_ADMIN,BLUETOOTH_SCAN,BLUETOOTH_CONNECT,ACCESS_FINE_LOCATION
-android.api = 34
-android.minapi = 23
-android.archs = arm64-v8a,armeabi-v7a
-android.accept_sdk_license = True
-
-[buildozer]
-log_level = 2
-warn_on_root = 1
+root@eeifqjcblj:~# grep -n "chat\|Chat\|console\|Console" /root/paradust-wasm/sources/minetest/src/gui/touchcontrols.cpp | head -30
+188:            case toggle_chat_id:
+189:                    key = "toggle_chat";
+191:            case chat_id:
+192:                    key = "chat";
+314:            if (id == toggle_chat_id)
+315:                    // Chat is shown by default, so chat_hide_btn.png is shown first.
+316:                    addToggleButton(m_buttons, id, "chat_hide_btn.png",
+317:                                    "chat_show_btn.png", rect, true);
+342:            if (id == toggle_chat_id)
+343:                    // Chat is shown by default, so chat_hide_btn.png is shown first.
+344:                    addToggleButton(m_overflow_buttons, id, "chat_hide_btn.png",
+345:                                    "chat_show_btn.png", rect, false);
+root@eeifqjcblj:~#
